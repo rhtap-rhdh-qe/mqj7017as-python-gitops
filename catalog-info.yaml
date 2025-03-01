@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mqj7017as-python-gitops
+  description: This is GitOps manifest for mqj7017as-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mqj7017as-python
+    backstage.io/kubernetes-id: mqj7017as-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mqj7017as-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mqj7017as-python
